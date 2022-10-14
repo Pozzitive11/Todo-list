@@ -1,0 +1,17 @@
+.footer{
+  position: sticky;
+  bottom: 0;
+  z-index: 200;
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+  background-color: $color-white;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.today{
+  font-size: 20px;
+  &__day{
+    font-weight: 600;
+  }
+}

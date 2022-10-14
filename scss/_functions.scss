@@ -1,0 +1,69 @@
+
+
+$theme-colors-map: (
+  dark: (
+    border: $color-dark,
+    background: $color-dark,
+    shadow: $color-dark,
+  ),
+  purple: (
+    border: $color-purple,
+    background: $color-purple,
+    shadow: $color-purple,
+  ),
+  blue: (
+    border: $color-blue,
+    background: $color-blue,
+    shadow: $color-blue,
+  ),
+  lighblue: (
+    border: $color-lighblue,
+    background: $color-lighblue,
+    shadow: $color-lighblue,
+  ),
+  lightpurple: (
+    border: $color-lightpurple,
+    background: $color-lightpurple,
+    shadow: $color-lightpurple,
+  ),
+  pink: (
+    border: $color-pink,
+    background: $color-pink,
+    shadow: $color-pink,
+  ),
+  red: (
+    border: $color-red,
+    background: $color-red,
+    shadow: $color-red,
+  ),
+  yellow: (
+    border: $color-yellow,
+    background: $color-yellow,
+    shadow: $color-yellow,
+  ),
+  green: (
+    border: $color-green,
+    background: $color-green,
+    shadow: $color-green,
+  ),
+  white: (
+    background: $color-white,
+    shadow: $color-white,
+  ),
+) !default;
+
+
+@function theme-color($color, $variant: 'background') {
+    @return map-get(map-get($theme-colors-map, $color), $variant);
+}
+
+@each $theme-color, $i in $theme-colors-map {
+  .color__checkmark--#{$theme-color + ''} {
+    border: 2px solid theme-color($theme-color, "border");
+  }
+
+  .color--#{$theme-color}:checked ~ .color__checkmark {
+    background-color: theme-color($theme-color, "background");
+    box-shadow: 0 3px 12px 0 rgba(theme-color($theme-color, "shadow"), 0.4);
+  }
+}

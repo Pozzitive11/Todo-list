@@ -1,0 +1,63 @@
+.show-task {
+  width: 100%;
+}
+
+.task {
+  &__item {
+    @include flex-dir;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 33px;
+    background: #e8e8e8;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    cursor: pointer;
+
+    label {
+      margin-right: 10px;
+    }
+
+    input {
+      cursor: pointer;
+    }
+
+    &:hover {
+      outline: 2px solid $color-dark;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  &__name {
+    margin-left: 10px;
+    font-weight: 600;
+  }
+  &__deadline {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+    font-size: 12px;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+  &__delete{
+    margin-top: 20px;
+    margin-left: auto;
+    &:hover  .icon-delete{
+      fill: red;
+    }
+  }
+}
+
+.task__input:checked ~ .task__name {
+  text-decoration: line-through;
+}
+
+.task__input:checked  .task__item {
+  opacity: 0.7;
+}

@@ -1,0 +1,50 @@
+.custom-label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid #e3e3e3;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.custom-input:checked ~ .checkmark {
+  background-color: $color-dark;
+  box-shadow: 0 3px 12px 0 rgba($color-dark, 0.4);
+}
+
+.color {
+  &__list {
+    @include flex-all-center;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  &__item {
+    @include mr(20px);
+  }
+  &__checkmark--empty {
+    @include flex-all-center;
+  }
+}

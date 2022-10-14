@@ -1,0 +1,52 @@
+@import "./mixins";
+@import "./breakpoint";
+@import "./reset";
+@import "./variables";
+@import "./settings";
+
+@import "./create-task";
+@import "./show-task";
+@import "./custom-radio";
+@import "./header";
+@import "./footer";
+@import "./functions";
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.icon {
+  fill: #000;
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.icon-color {
+  width: 11px;
+  height: 11px;
+  margin-right: 0;
+}
+
+.icon-delete {
+  fill: #000;
+  width: 20px;
+  height: 20px;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  gap: 400px;
+}
+
+.done {
+  opacity: 0.7;
+}

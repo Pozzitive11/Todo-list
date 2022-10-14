@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="img/favicon.ico" sizes="16x16">
+  <title>Todolist</title>
+  <link rel="stylesheet" href="dist/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <a class="logo" href="#">
+          <img loading="lazy" src="img/logo.svg" class="image" width="48" height="48" alt="logo TodoList">
+        </a>
+        <h1 class="header__title">Todo App</h1>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="main-content">
+        <section class="create-task">
+          <form action="#" class="form task__settings">
+            <div class="form__title">new goal</div>
+            <ul class="form__list">
+              <li class="form__item">
+                <div class="task__settings-name">
+                  <p class="task__settings-title">
+                    <svg class="icon">
+                      <use xlink:href="sprite.svg#title"></use>
+                    </svg>
+                    title
+                  </p>
+                  <input type="text" name="title" required>
+                </div>
+              </li>
+              <li class="form__item">
+                <div class="task__settings-color">
+                  <p class="task__settings-title">
+                    <svg class="icon">
+                      <use xlink:href="sprite.svg#color"></use>
+                    </svg>
+                    color tag
+                  </p>
+                  <ul class="color__list">
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--dark" type="radio" name="color" value="000000">
+                        <span class="color__checkmark checkmark color__checkmark--dark"></span>
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--purple" type="radio" name="color" value="3D3270">
+                        <span class="color__checkmark checkmark color__checkmark--purple"></span>
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--blue" type="radio" name="color" value="424CE2">
+                        <span class="color__checkmark checkmark color__checkmark--blue"></span>
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--lighblue" type="radio" name="color" value="2196F3">
+                        <span class="color__checkmark checkmark color__checkmark--lighblue"></span>
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--lightpurple" type="radio" name="color" value="9C28B1">
+                        <span class="color__checkmark checkmark color__checkmark--lightpurple"></span>
+                      </label>
+                    </li>
+                  </ul>
+                  <ul class="color__list">
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--pink" type="radio" name="color" value="E91D62">
+                        <span class="color__checkmark checkmark color__checkmark--pink"></span>
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--red" type="radio" name="color" value="F34336">
+                        <span class="color__checkmark checkmark color__checkmark--red"></span>
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--yellow" type="radio" name="color" value="FFB800">
+                        <span class="color__checkmark checkmark color__checkmark--yellow"></span>
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--green" type="radio" name="color" value="21C228">
+                        <span class="color__checkmark checkmark color__checkmark--green"></span>
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label custom-label">
+                        <input class="color__input custom-input color--white" type="radio" name="color" value="FFF"
+                          checked>
+                        <span class="color__checkmark checkmark color__checkmark--empty">
+                          <svg class="icon icon-color">
+                            <use xlink:href="sprite.svg#no-color"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="form__item">
+                <p class="task__settings-title">
+                  <svg class="icon">
+                    <use xlink:href="sprite.svg#deadline"></use>
+                  </svg>
+                  deadline
+                </p>
+                <div class="task__settings-deadline deadline">
+                  <ul class="deadline__list">
+                    <li class="deadline__item">
+                      <label class="deadline__label custom-label">
+                        <input class="deadline__input custom-input" type="radio" name="deadline" value="today" checked>
+                        <span class="checkmark"></span>
+                        <span class="deadline__input">today</span>
+                      </label>
+                    </li>
+                    <li class="deadline__item">
+                      <label class="deadline__label custom-label">
+                        <input class="deadline__input custom-input" type="radio" name="deadline" value="tomorrow">
+                        <span class="checkmark"></span>
+                        <span class="deadline__input">tomorrow</span>
+                      </label>
+                    </li>
+                    <li class="deadline__item">
+                      <label class="deadline__label custom-label">
+                        <input class="deadline__input custom-input" type="radio" name="deadline" value="soon">
+                        <span class="checkmark"></span>
+                        <span class="deadline__input">soon</span>
+                      </label>
+                    </li>
+                  </ul>
+                  <ul class="deadline__list">
+                    <li class="deadline__item">
+                      <label class="deadline__label custom-label">
+                        <input class="deadline__input custom-input" type="radio" name="deadline" value="someday">
+                        <span class="checkmark"></span>
+                        <span class="deadline__input">someday</span>
+                      </label>
+                    </li>
+                    <li class="deadline__item">
+                      <label class="deadline__label custom-label">
+                        <input class="deadline__input custom-input" type="radio" name="deadline" value="specific day">
+                        <span class="checkmark"></span>
+                        <span class="deadline__input">specific day</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <button class="task__settings-button custom-button">Save</button>
+          </form>
+        </section>
+        <section class="show-task">
+          <ul class="task__list">
+            <li class="task__item">
+              <div class="task__top">
+                <input class="task__input" type="checkbox">
+                <p class="task__name">Task name</p>
+                <div class="task__delete">
+                  <svg class="icon-delete">
+                    <use xlink:href="sprite.svg#delete"></use>
+                  </svg>
+                </div>
+              </div>
+              <p class="task__deadline">
+                <svg class="icon icon-color">
+                  <use xlink:href="sprite.svg#deadline"></use>
+                </svg>
+                next month
+              </p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="today"></div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
