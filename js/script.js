@@ -17,7 +17,6 @@ const daysOfTheWeek = [
 const date = new Date();
 console.log(date.getTime());
 
-
 function showTodayDate() {
   let weekday = daysOfTheWeek[date.getDay()];
   const options = { month: "long" };
@@ -26,7 +25,6 @@ function showTodayDate() {
   today.innerHTML = `<span class="today__day">${weekday},</span>  ${month} ${day}`;
 }
 showTodayDate();
-
 
 function createAudio(sound) {
   const audio = new Audio(sound);
@@ -68,11 +66,11 @@ function createTask() {
       taskBlock.done ? "done" : ""
     }" style="background-color: #${taskBlock.bgColor};" >
     <div class="task__top">
-      <input class="task__input" type="checkbox" data-index=${i} id="item${i}" ${
+      <input class="task__input" type="checkbox" data-index=${i} ${
         taskBlock.done ? "checked" : ""
       }>
       <p class="task__name">${taskBlock.taskName}</p>
-      <div class="task__delete">
+      <div class="task__delete" data-delete=${i}>
         <svg class="icon-delete">
           <use xlink:href="sprite.svg#delete"></use>
         </svg>
@@ -91,10 +89,11 @@ function createTask() {
 }
 
 function deleteTask(target, taskBlock) {
-  const task = target.closest(".task__item");
-
-  if (target.tagName === "use" || target.tagName === "svg") {
+  const deleteButton = target.closest(".task__delete");
+  if (deleteButton) {
     taskBlock.remove();
+    tasks.splice(deleteButton.dataset.delete, 1);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 }
 
@@ -115,13 +114,10 @@ function toggleDone(target) {
 form.addEventListener("submit", addTask);
 
 tasksList.addEventListener("click", ({ target }) => {
+  const task = target.closest(".task__item");
+
   toggleDone(target);
-  // deleteTask(target, task);
+  deleteTask(target, task);
 });
 
 createTask();
-
-
-function checkDeadline() {
-  
-}
