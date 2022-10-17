@@ -62,7 +62,7 @@ $theme-colors-map: (
     border: 2px solid theme-color($theme-color, "border");
   }
 
-  .color--#{$theme-color}:checked ~ .color__checkmark {
+  .color--#{"" + $theme-color}:checked ~ .color__checkmark {
     background-color: theme-color($theme-color, "background");
     box-shadow: 0 3px 12px 0 rgba(theme-color($theme-color, "shadow"), 0.4);
   }

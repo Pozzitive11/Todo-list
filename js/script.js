@@ -15,7 +15,6 @@ const daysOfTheWeek = [
 ];
 
 const date = new Date();
-console.log(date.getTime());
 
 function showTodayDate() {
   let weekday = daysOfTheWeek[date.getDay()];
@@ -91,9 +90,19 @@ function createTask() {
 function deleteTask(target, taskBlock) {
   const deleteButton = target.closest(".task__delete");
   if (deleteButton) {
+    const indexOfDeleteButton = deleteButton.dataset.delete;
     taskBlock.remove();
-    tasks.splice(deleteButton.dataset.delete, 1);
+    tasks.splice(indexOfDeleteButton, 1);
     localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+}
+
+function toggleDoneClass(taskBlock, index) {
+  if (tasks[index].done) {
+    // createAudio("../sounds/done.wav");
+    taskBlock.classList.add("done");
+  } else {
+    taskBlock.classList.remove("done");
   }
 }
 
@@ -103,12 +112,7 @@ function toggleDone(target) {
   const index = target.dataset.index;
   tasks[index].done = !tasks[index].done;
   localStorage.setItem("tasks", JSON.stringify(tasks));
-  if (tasks[index].done) {
-    // createAudio("../sounds/done.wav");
-    task.classList.add("done");
-  } else {
-    task.classList.remove("done");
-  }
+  toggleDoneClass(task, index);
 }
 
 form.addEventListener("submit", addTask);
@@ -121,3 +125,31 @@ tasksList.addEventListener("click", ({ target }) => {
 });
 
 createTask();
+
+// CLOCK
+
+const clock = document.querySelector(".clock");
+
+function currentTime() {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let session = "AM"
+
+  if (hours === 0) {
+    hours = 12;
+  }
+  if (hours > 12) {
+    hours = hours - 12;
+    session = "PM";
+  }
+
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  let time = `${hours}:${minutes} ${session}`;
+
+  clock.innerText = time;
+}
+
+window.addEventListener('load', currentTime)
