@@ -24,7 +24,6 @@ const createTaskForm = document.querySelector(".create-task");
 burgerButton.addEventListener("click", () => {
   burgerButton.classList.toggle("active");
   createTaskForm.classList.toggle("create-task--visible");
-  document.body.classList.toggle("hidden");
 });
 
 function showTodayDate() {
@@ -126,7 +125,11 @@ function toggleDone(target) {
   toggleDoneClass(task, index);
 }
 
-form.addEventListener("submit", addTask);
+form.addEventListener("submit", (e) => {
+  addTask(e);
+  burgerButton.classList.toggle("active");
+  createTaskForm.classList.toggle("create-task--visible"); 
+});
 
 tasksList.addEventListener("click", ({ target }) => {
   const task = target.closest(".task__item");
