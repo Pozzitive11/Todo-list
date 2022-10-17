@@ -16,6 +16,17 @@ const daysOfTheWeek = [
 
 const date = new Date();
 
+const burgerButton = document.querySelector(".burger");
+const createTaskForm = document.querySelector(".create-task");
+
+// ADAPTIVE BURGER
+
+burgerButton.addEventListener("click", () => {
+  burgerButton.classList.toggle("active");
+  createTaskForm.classList.toggle("create-task--visible");
+  document.body.classList.toggle("hidden");
+});
+
 function showTodayDate() {
   let weekday = daysOfTheWeek[date.getDay()];
   const options = { month: "long" };

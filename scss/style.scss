@@ -5,6 +5,7 @@
 @import "./settings";
 
 @import "./create-task";
+@import "./burger";
 @import "./show-task";
 @import "./custom-radio";
 @import "./header";
@@ -44,7 +45,11 @@ body {
 .main-content {
   display: flex;
   align-items: center;
-  gap: 400px;
+  justify-content: space-between;
+
+  @include high-tablet {
+    position: relative;
+  }
 }
 
 .done {

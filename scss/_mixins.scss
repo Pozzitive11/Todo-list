@@ -21,6 +21,12 @@
   }
 }
 
+@mixin mb($value) {
+  &:not(:last-child) {
+    margin-bottom: $value;
+  }
+}
+
 @mixin pr($value) {
   &:not(:last-child) {
     padding-right: $value;
