@@ -18,9 +18,9 @@ function clock(clockSelector) {
     hours = hours < 10 ? "0" + hours : hours;
     minutes = minutes < 10 ? "0" + minutes : minutes;
 
-    let time = `${hours}:${minutes} ${session}`;
+    // let time = ;
 
-    clock.innerText = time;
+    clock.innerHTML = `${hours}:${minutes} <span class="clock__session">${session}</span>`;
   }
 
   window.addEventListener("load", currentTime);

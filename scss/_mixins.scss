@@ -32,3 +32,8 @@
     padding-right: $value;
   }
 }
+
+@mixin shadow{
+  background-color: $color-white;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}

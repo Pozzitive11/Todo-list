@@ -13,7 +13,7 @@
 @import "./functions";
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family;
 }
 
 .container {
@@ -23,7 +23,7 @@ body {
 }
 
 .icon {
-  fill: #000;
+  fill: $color-dark;
   display: block;
   width: 14px;
   height: 14px;
@@ -37,7 +37,8 @@ body {
 }
 
 .icon-delete {
-  fill: #000;
+  fill: $color-dark;
+
   width: 20px;
   height: 20px;
 }

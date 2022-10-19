@@ -9,11 +9,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   const tasksList = document.querySelector(".task__list");
 
-  addTask(tasks, tasksList);
+  addTask(".form",tasks, tasksList);
   // audio();
-  burger(".burger", ".create-task");
+  burger(".form",".burger", ".create-task");
   deleteTask(tasks, tasksList);
-  showTodayDate();
+  showTodayDate(".today");
   toggleDone(tasks, tasksList);
   clock(".clock");
 });

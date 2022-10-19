@@ -1,8 +1,8 @@
 import { createTask } from "./createTask";
 import { checkCkolor } from "./checkColor";
 
-function addTask(rememberedTasks, tasksList) {
-  const form = document.querySelector(".form");
+function addTask(formSelector, rememberedTasks, tasksList) {
+  const form = document.querySelector(formSelector);
   function addTask(e) {
     e.preventDefault();
     const bgColor = checkCkolor(form.color.value);

@@ -1,5 +1,5 @@
-function showTodayDate(params) {
-  const today = document.querySelector(".today");
+function showTodayDate(todaySelector) {
+  const today = document.querySelector(todaySelector);
 
   const daysOfTheWeek = [
     "Sunday",

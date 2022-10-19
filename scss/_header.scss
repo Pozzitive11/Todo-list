@@ -22,4 +22,9 @@
 .clock{
   margin-left: auto;
   font-size: 18px;
+
+  &__session{
+    font-size: 14px;
+    font-weight: 600;
+  }
 }

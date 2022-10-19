@@ -15,10 +15,6 @@
     transform: translateY(-200%);
     max-width: 100%;
   }
-
-  @include mobile {
-    // overflow: scroll;
-  }
 }
 .create-task--visible {
   transform: none;

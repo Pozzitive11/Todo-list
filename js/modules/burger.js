@@ -1,5 +1,5 @@
-function burger(burgerSelector, createTaskFormSelector) {
-  const form = document.querySelector("form");
+function burger(formSelector,burgerSelector, createTaskFormSelector) {
+  const form = document.querySelector(formSelector);
 
   const burgerButton = document.querySelector(burgerSelector);
   const createTaskForm = document.querySelector(createTaskFormSelector);
