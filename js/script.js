@@ -17,3 +17,4 @@ window.addEventListener("DOMContentLoaded", () => {
   toggleDone(tasks, tasksList);
   clock(".clock");
 });
+

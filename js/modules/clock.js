@@ -19,11 +19,12 @@ function clock(clockSelector) {
     minutes = minutes < 10 ? "0" + minutes : minutes;
 
     // let time = ;
-
     clock.innerHTML = `${hours}:${minutes} <span class="clock__session">${session}</span>`;
+    setTimeout(currentTime, 1000);
   }
-
   window.addEventListener("load", currentTime);
 }
+
+
 
 export default clock;
