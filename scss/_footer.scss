@@ -9,9 +9,6 @@
   text-align: center;
   @include shadow;
   
-  @include high-tablet{
-    position: absolute;
-  }
 }
 .today{
   font-size: 20px;

@@ -45,7 +45,6 @@ body {
 
 .main-content {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   @include high-tablet {
