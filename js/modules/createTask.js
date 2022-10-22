@@ -10,9 +10,9 @@ function createTask(rememberedTasks, tasksList) {
         taskBlock.done ? "checked" : ""
       }>
     <p class="task__name">${taskBlock.taskName}</p>
-    <div class="task__delete" data-delete=${i}>
+    <div class="task__delete" data-delete="${i}">
       <svg class="icon-delete">
-        <use xlink:href="sprite.svg#delete"></use>
+        <use xlink:href="sprite.svg#delete" ></use>
       </svg>
     </div>
   </div>
